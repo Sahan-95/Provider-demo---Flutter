@@ -24,18 +24,13 @@ class _SecondState extends State<Second> {
                   Text(numbersProvider.numbers.last.toString()),
                   Expanded(
                     child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
                         itemCount: numbersProvider.numbers.length,
                         itemBuilder: (context, index) {
-                          return Text(numbersProvider.numbers[index].toString());
+                          return Text(
+                              numbersProvider.numbers[index].toString());
                         }),
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) =>
-                                const Second(title: "Second Screen")));
-                      },
-                      child: child)
                 ],
               ),
               floatingActionButton: FloatingActionButton(
